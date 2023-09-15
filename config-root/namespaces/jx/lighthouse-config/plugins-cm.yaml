@@ -4,7 +4,7 @@ data:
     approve:
     - lgtm_acts_as_approve: true
       repos:
-      - MySoftDevcloud/jenkinsx
+      - mysoftdevops/jenkinsx
       require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
@@ -16,7 +16,7 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
-      MySoftDevcloud/jenkinsx:
+      mysoftdevops/jenkinsx:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
       - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
@@ -26,7 +26,7 @@ data:
       additional_labels: null
     owners: {}
     plugins:
-      MySoftDevcloud/jenkinsx:
+      mysoftdevops/jenkinsx:
       - config-updater
       - approve
       - assign
@@ -51,8 +51,8 @@ data:
       xxl: 0
     triggers:
     - repos:
-      - MySoftDevcloud/jenkinsx
-      trusted_org: MySoftDevcloud
+      - mysoftdevops/jenkinsx
+      trusted_org: mysoftdevops
 kind: ConfigMap
 metadata:
   creationTimestamp: null

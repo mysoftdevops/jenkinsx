@@ -33,7 +33,7 @@ jxRequirements:
     registry: 10.104.132.185
   environments:
   - key: dev
-    owner: MySoftDevcloud
+    owner: mysoftdevops
     repository: jenkinsx
   - key: staging
   - key: production

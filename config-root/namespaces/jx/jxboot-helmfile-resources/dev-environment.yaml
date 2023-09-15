@@ -13,7 +13,7 @@ metadata:
 spec:
   source:
     ref: "master"
-    url: https://github.com/MySoftDevcloud/jenkinsx.git
+    url: https://github.com/mysoftdevops/jenkinsx.git
   kind: Development
   label: Development
   namespace: jx
