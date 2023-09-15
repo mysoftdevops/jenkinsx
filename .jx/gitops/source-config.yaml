@@ -7,6 +7,8 @@ spec:
   - owner: mysoftdevops
     provider: https://github.com
     providerKind: github
+    repositories:
+    - name: aspnet-app-001
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
