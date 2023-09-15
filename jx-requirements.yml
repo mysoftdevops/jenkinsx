@@ -14,7 +14,7 @@ spec:
     gitName: github
     gitServer: https://github.com
     provider: minikube
-    registry: 10.104.132.185
+    registry: 10.102.238.180
   environments:
   - key: dev
     owner: mysoftdevops
