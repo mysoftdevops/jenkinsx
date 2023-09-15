@@ -7,7 +7,6 @@ data:
       LinkURL: null
     in_repo_config:
       enabled:
-        mysoftdevops/aspnet-app-001: true
         mysoftdevops/jenkinsx: true
     plank: {}
     pod_namespace: jx
@@ -20,7 +19,6 @@ data:
         required-if-present-contexts: null
         skip-unknown-contexts: false
       merge_method:
-        mysoftdevops/aspnet-app-001: merge
         mysoftdevops/jenkinsx: merge
       queries:
       - labels:
@@ -33,7 +31,6 @@ data:
         - needs-rebase
         repos:
         - mysoftdevops/jenkinsx
-        - mysoftdevops/aspnet-app-001
       - labels:
         - updatebot
         missingLabels:
@@ -44,7 +41,6 @@ data:
         - needs-rebase
         repos:
         - mysoftdevops/jenkinsx
-        - mysoftdevops/aspnet-app-001
       target_url: http://lighthouse-jx.192.168.49.2.nip.io/merge/status
 kind: ConfigMap
 metadata:
