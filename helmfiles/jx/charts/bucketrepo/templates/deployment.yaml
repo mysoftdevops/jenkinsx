@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    draft: {{ default "draft-app" .Values.draft }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "fullname" . }}
+  template:
+    metadata:
+      labels:
+        draft: {{ default "draft-app" .Values.draft }}
+        app: {{ template "fullname" . }}
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/_config.yaml.tpl") . | sha256sum | quote }}
+{{- if .Values.podAnnotations }}
+{{ toYaml .Values.podAnnotations | indent 8 }}
+{{- end }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repo }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        command: ["/home/nonroot/bucketrepo"]
+        args:
+        - "-config-path={{ .Values.config.path }}"
+        - "-log-level={{ .Values.logLevel }}"
+        env:
+{{- range $pkey, $pval := .Values.env }}
+        - name: {{ $pkey }}
+          value: {{ quote $pval }}
+{{- end }}
+{{- if .Values.envSecrets }}
+{{- range $pkey, $pval := .Values.envSecrets }}
+        - name: {{ $pkey }}
+          valueFrom:
+            secretKeyRef:
+              name: jenkins-x-bucketrepo-env
+              key: {{ $pkey }}
+{{- end }}
+{{- end }}
+        ports:
+        - containerPort: {{ .Values.service.internalPort }}
+        livenessProbe:
+          httpGet:
+            path: {{ .Values.probePath }}
+            port: {{ .Values.service.internalPort }}
+          initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+          periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+          successThreshold: {{ .Values.livenessProbe.successThreshold }}
+          timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
+        readinessProbe:
+          httpGet:
+            path: {{ .Values.probePath }}
+            port: {{ .Values.service.internalPort }}
+          periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+          successThreshold: {{ .Values.readinessProbe.successThreshold }}
+          timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
+        volumeMounts:
+        - name: config
+          mountPath: {{ .Values.config.path }}
+          readOnly: true
+        - name: data
+          mountPath: /jx_data
+        resources:
+{{ toYaml .Values.resources | indent 12 }}
+      securityContext:
+        fsGroup: 65534
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+{{- if .Values.serviceaccount.enabled }}
+      serviceAccountName: {{ template "fullname" . }}
+{{- end }}
+      volumes:
+      - name: config
+        secret:
+          secretName: bucketrepo-config
+      - name: data
+        hostPath:
+          path: /jx_data/bucketrepo

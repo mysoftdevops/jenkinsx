@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: docker-registry-persistent-volume
+  labels:
+    type: local
+spec:
+  storageClassName: docker-registry-local
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/jx_data/registry"

@@ -1,0 +1,17 @@
+# Source: docker-registry-storage/templates/docker-registry-persistent-volume-claim.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: docker-registry-persistent-volume-claim
+  annotations:
+    meta.helm.sh/release-name: 'docker-registry-storag'
+  namespace: jx
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  storageClassName: docker-registry-local
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi

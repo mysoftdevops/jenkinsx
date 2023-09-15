@@ -1,0 +1,18 @@
+# Source: docker-registry-storage/templates/docker-registry-persistent-volume.yaml
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: docker-registry-persistent-volume
+  labels:
+    type: local
+    gitops.jenkins-x.io/pipeline: 'cluster'
+  annotations:
+    meta.helm.sh/release-name: 'docker-registry-storag'
+spec:
+  storageClassName: docker-registry-local
+  capacity:
+    storage: 10Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/jx_data/registry"
