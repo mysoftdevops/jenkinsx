@@ -150,3 +150,5 @@
     sources:
     - https://github.com/mysoftdevops/aspnet-app-001.git
     version: 0.0.11
+- namespace: jx-production
+  path: helmfiles/jx-production/helmfile.yaml
