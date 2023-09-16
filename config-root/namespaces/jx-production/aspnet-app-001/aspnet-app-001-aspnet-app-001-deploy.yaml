@@ -5,12 +5,12 @@ metadata:
   name: aspnet-app-001-aspnet-app-001
   labels:
     draft: draft-app
-    chart: "aspnet-app-001-0.0.13"
+    chart: "aspnet-app-001-0.0.11"
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
     meta.helm.sh/release-name: 'aspnet-app-001'
     wave.pusher.com/update-on-config-change: 'true'
-  namespace: jx-staging
+  namespace: jx-production
 spec:
   selector:
     matchLabels:
@@ -25,11 +25,11 @@ spec:
       serviceAccountName: aspnet-app-001-aspnet-app-001
       containers:
       - name: aspnet-app-001
-        image: "10.102.238.180/mysoftdevops/aspnet-app-001:0.0.13"
+        image: "10.102.238.180/mysoftdevops/aspnet-app-001:0.0.11"
         imagePullPolicy: IfNotPresent
         env:
         - name: VERSION
-          value: 0.0.13
+          value: 0.0.11
         envFrom: null
         ports:
         - name: http
