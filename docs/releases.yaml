@@ -133,15 +133,15 @@
   path: helmfiles/jx-staging/helmfile.yaml
   releases:
   - apiVersion: v1
-    appVersion: 0.0.10
+    appVersion: 0.0.11
     applicationUrl: http://aspnet-app-001-jx-staging.192.168.49.2.nip.io
     description: A Helm chart for Kubernetes
-    firstDeployed: "2023-09-15T16:46:57Z"
+    firstDeployed: "2023-09-15T18:18:17Z"
     icon: https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png
     ingresses:
     - name: aspnet-app-001
       url: http://aspnet-app-001-jx-staging.192.168.49.2.nip.io
-    lastDeployed: "2023-09-15T18:18:17Z"
+    lastDeployed: "2023-09-16T03:22:37Z"
     name: aspnet-app-001
     releaseName: aspnet-app-001
     repositoryName: dev
@@ -149,4 +149,4 @@
     resourcePath: config-root/namespaces/jx-staging/aspnet-app-001
     sources:
     - https://github.com/mysoftdevops/aspnet-app-001.git
-    version: 0.0.10
+    version: 0.0.11
