@@ -7,5 +7,11 @@ namespace: jx-production
 repositories:
 - name: dev
   url: http://bucketrepo-jx.192.168.49.2.nip.io/bucketrepo/charts/
+releases:
+- chart: dev/aspnet-app-001
+  version: 0.0.16
+  name: aspnet-app-001
+  values:
+  - jx-values.yaml
 templates: {}
 renderedvalues: {}
