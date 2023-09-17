@@ -1,0 +1,10 @@
+# Source: aspnet-app-001/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: aspnet-app-001-aspnet-app-001
+  annotations:
+    meta.helm.sh/release-name: 'aspnet-app-001'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
