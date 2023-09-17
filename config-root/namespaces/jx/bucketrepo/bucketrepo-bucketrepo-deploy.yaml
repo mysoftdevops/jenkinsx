@@ -22,7 +22,7 @@ spec:
         draft: draft-app
         app: bucketrepo-bucketrepo
       annotations:
-        checksum/config: "e4eb9e4600079b6269234f92d4eb0772e0537e685f847544b7fc810254517ae0"
+        checksum/config: "1eb4150ba422ddcaa3f0b089f28ce30ad91d7b332e5513ac8c8de4a819c176ca"
     spec:
       containers:
       - name: bucketrepo
