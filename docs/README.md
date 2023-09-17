@@ -65,6 +65,13 @@
 	      <td><a href='https://github.com/jenkins-x-plugins/jx-build-controller'>source</a></td>
 	    </tr>
     <tr>
+	      <td>lighthouse-webui-plugin</td>
+	      <td title='Web UI for Lighthouse, to visualize events, jobs, and merge status/history.'><a href='https://github.com/jenkins-x-plugins/lighthouse-webui-plugin'> <img src='https://raw.githubusercontent.com/jenkins-x/jenkins-x-website/master/images/logo/jenkinsx-icon-color.svg' width='24px' height='24px'> lighthouse-webui-plugin</a></td>
+	      <td>0.1.7</td>
+	      <td><a href='http://lighthouse-jx.192.168.49.2.nip.io'>view</a></td>
+	      <td><a href='https://github.com/jenkins-x-plugins/lighthouse-webui-plugin'>source</a></td>
+	    </tr>
+    <tr>
 	      <td>docker-registry-storag</td>
 	      <td title=''> charts/docker-registry-storage</td>
 	      <td></td>
@@ -80,26 +87,6 @@
 	      <td>0.5.0</td>
 	      <td></td>
 	      <td></td>
-	    </tr>
-    <tr>
-		      <td colspan='5'><h3>jx-staging</h3></td>
-		    </tr>
-	    <tr>
-	      <td>aspnet-app-001</td>
-	      <td title='A Helm chart for Kubernetes'> <img src='https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png' width='24px' height='24px'> aspnet-app-001</td>
-	      <td>0.0.14</td>
-	      <td><a href='http://aspnet-app-001-jx-staging.192.168.49.2.nip.io'>view</a></td>
-	      <td><a href='https://github.com/mysoftdevops/aspnet-app-001.git'>source</a></td>
-	    </tr>
-    <tr>
-		      <td colspan='5'><h3>jx-production</h3></td>
-		    </tr>
-	    <tr>
-	      <td>aspnet-app-001</td>
-	      <td title='A Helm chart for Kubernetes'> <img src='https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png' width='24px' height='24px'> aspnet-app-001</td>
-	      <td>0.0.11</td>
-	      <td><a href='http://aspnet-app-001-jx-production.192.168.49.2.nip.io'>view</a></td>
-	      <td><a href='https://github.com/mysoftdevops/aspnet-app-001.git'>source</a></td>
 	    </tr>
 
   </tbody>
