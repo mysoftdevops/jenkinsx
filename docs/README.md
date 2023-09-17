@@ -88,6 +88,16 @@
 	      <td></td>
 	      <td></td>
 	    </tr>
+    <tr>
+		      <td colspan='5'><h3>jx-staging</h3></td>
+		    </tr>
+	    <tr>
+	      <td>aspnet-app-001</td>
+	      <td title='A Helm chart for Kubernetes'> <img src='https://raw.githubusercontent.com/cdfoundation/artwork/master/jenkinsx/icon/color/jenkinsx-icon-color.png' width='24px' height='24px'> aspnet-app-001</td>
+	      <td>0.0.15</td>
+	      <td><a href='http://aspnet-app-001-jx-staging.192.168.49.2.nip.io'>view</a></td>
+	      <td><a href='https://github.com/mysoftdevops/aspnet-app-001.git'>source</a></td>
+	    </tr>
 
   </tbody>
 </table>
