@@ -57,7 +57,7 @@ config:
   storage:
     bucketUrl: ""
   cache:
-    dir: /tmp/bucketrepo
+    dir: /jx_data
   repositories:
     central: "https://repo.maven.org/maven2"
     central1: "https://repo1.maven.org/maven2"
