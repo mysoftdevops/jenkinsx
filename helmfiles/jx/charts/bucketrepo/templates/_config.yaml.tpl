@@ -18,7 +18,7 @@ storage:
 {{- end }}
 
 cache:
-    base_dir: "{{ .Values.config.cache.dir }}"
+    basedir: "{{ .Values.config.cache.dir }}"
 
 repositories:
 {{- if .Values.config.repositories }}
