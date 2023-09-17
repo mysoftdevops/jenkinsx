@@ -1,0 +1,22 @@
+# Source: aspnet-app-001/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    meta.helm.sh/release-name: 'aspnet-app-001'
+  name: aspnet-app-001
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: ImplementationSpecific
+        backend:
+          service:
+            name: aspnet-app-001
+            port:
+              number: 80
+    host: aspnet-app-001-jx-staging.192.168.49.2.nip.io
